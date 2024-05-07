@@ -1,0 +1,26 @@
+.navbar-nav{
+  display: flex;
+  display: inline;
+  color: white;
+  list-style-type: none;
+  margin-right: 1rem;
+  min-height: 100%;
+
+}
+.collapse{
+  display: flex;
+}
+
+
+li{
+  list-style-type: none;
+}
+
+.nav-link{
+  padding-top: 15px;
+}
+
+.nav-link:hover{
+  color: #76e12f;;
+}
+

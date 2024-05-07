@@ -1,0 +1,19 @@
+.rick-section{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #51be81, #06b1c2);
+  border-radius: 15px;
+}
+.rick_image, img{
+  max-width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+.rick-content{
+  color: white;
+  margin: 10px;
+}
+
