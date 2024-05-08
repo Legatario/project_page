@@ -1,4 +1,8 @@
-body{
+:host{
+  background-color: black;
+}
+
+.rick_body{
   background-color: black;
 }
 

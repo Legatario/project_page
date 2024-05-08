@@ -7,10 +7,11 @@
   border-radius: 15px;
 }
 .rick_image, img{
-  max-width: 100%;
+  width: 100%;
   height: auto;
   margin-top: 2rem;
 }
+
 
 .rick-content{
   color: white;

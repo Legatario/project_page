@@ -10,6 +10,11 @@
   justify-content: space-between;
 }
 
+img{
+  width: 400px;
+  height: 100px;
+}
+
 p {
   padding: 0 10px;
   color:#76e12f;
