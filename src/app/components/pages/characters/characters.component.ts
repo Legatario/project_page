@@ -21,9 +21,9 @@ export class CharactersComponent {
     this.service.getChar().subscribe({
       next: (data) =>{
         this.data = data.results
+        console.log(this.data)
       }
     })
-    console.log(this.data)
   }
 
 }

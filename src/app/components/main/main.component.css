@@ -1,1 +1,11 @@
+.rick_body{
+  background-color: black;
+}
+
+.rick_main{
+  display: flex;
+  min-height: 80vh;
+  margin: 0;
+  padding-top: 1rem
+}
 
