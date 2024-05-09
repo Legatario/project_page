@@ -15,8 +15,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './characters.component.css'
 })
 export class CharactersComponent implements OnInit{
-  data: any
-  call: any
+  data: any;
+  mortyData: any;
+  call: any;
 
 
   constructor(private service: ServiceService, private stateService: StateService) {}
@@ -37,14 +38,18 @@ export class CharactersComponent implements OnInit{
     this.service.getChar().subscribe({
       next: (data) =>{
         this.data = data.results
+        this.mortyData = data.results
         console.log(this.data)
       }
     })
   }
 
   public JerrySearch($event: any):void{
-    this.call = $event
 
+    this.mortyData = this.data.filter((data: any) => {
+      return data.name.toLowerCase().includes($event);
+    });
+    console.log(this.mortyData)
   }
 
 

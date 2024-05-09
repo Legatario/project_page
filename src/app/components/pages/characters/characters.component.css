@@ -73,6 +73,7 @@
   width: 90%; /* Ajusta a largura dos cards */
   max-width: 300px; /* Define uma largura máxima */
   height: auto;
+  max-height: 386px;
   background-color: black;
   color: aliceblue;
   border-radius: 15px;
