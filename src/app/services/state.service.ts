@@ -8,7 +8,7 @@ export class StateService {
 
 
   private bethSearch = new BehaviorSubject<string>('');
-   currentBethSearch$ = this.bethSearch.asObservable();
+  currentBethSearch$ = this.bethSearch.asObservable();
 
   constructor() {}
 
