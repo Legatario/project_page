@@ -1,5 +1,5 @@
 <div class="rick_search">
-  <form>
+  <form (submit)="onSubmit($event)">
     <input type="text" (input)="search($event)">
     <mat-icon class="morty_iconSearch">search</mat-icon>
   </form>

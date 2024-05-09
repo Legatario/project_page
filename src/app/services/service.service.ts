@@ -11,9 +11,13 @@ export class ServiceService {
 
   // private episodesUrl = "https://rickandmortyapi.com/api/episode";
 
+
+
   constructor(private http: HttpClient) { }
 
   getChar(): Observable<any>{
     return this.http.get<any>(this.charUrl)
   }
+
+
 }
