@@ -45,10 +45,13 @@
   width: 100%;
   height: 80vh;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  /* grid-template-columns: repeat(5, 1fr); */
   background: linear-gradient(to right, #51be81, #06b1c2);
   border-radius: 15px;
   overflow: scroll;
+  gap: 10px;
 }
 
 /* Estilos para barras de rolagem */
@@ -59,7 +62,7 @@
 /* Estilos para imagens */
 .rick_image, img {
   width: 100%;
-  height: auto;
+  height: 1px;
   margin-top: 2rem;
   grid-column-start: 1;
   grid-column-end: -1;
@@ -73,7 +76,7 @@
   background-color: black;
   color: aliceblue;
   border-radius: 15px;
-  margin: 20px; /* Reduz a margem para dispositivos menores */
+  margin: 15px; /* Reduz a margem para dispositivos menores */
   text-align: center;
   cursor: pointer;
 }
@@ -85,32 +88,32 @@
 
 /* Estilos para as imagens dentro dos cards */
 .morty_img {
-  width: 100%; /* Ajusta a largura das imagens */
+  width: 100%;
   height: auto;
 }
 
-@media only screen and (max-width: 1200px) {
+/* @media only screen and (max-width: 1200px) {
   .rick-section {
-    grid-template-columns: repeat(4, 1fr); /* Altera para 4 colunas */
+    grid-template-columns: repeat(4, 1fr);
   }
 
 }
 
-/* Media query para telas até 768px */
+
 @media only screen and (max-width: 1000px) {
   .rick-section {
-    grid-template-columns: repeat(3, 1fr); /* Altera para 3 colunas em telas menores que 768px */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (max-width: 790px) {
   .rick-section {
-    grid-template-columns: repeat(2, 1fr); /* Altera para 2 colunas em telas menores que 480px */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (max-width: 600px) {
   .rick-section {
-    grid-template-columns: 1fr; /* Altera para 1 coluna em telas menores que 320px */
+    grid-template-columns: 1fr;
   }
-}
+} */
