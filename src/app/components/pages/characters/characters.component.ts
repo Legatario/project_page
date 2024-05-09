@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceService } from './../../../services/service.service';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-characters',
@@ -25,6 +25,8 @@ export class CharactersComponent {
       }
     })
   }
+
+  @Input() searchTerm?: string;
 
 }
 

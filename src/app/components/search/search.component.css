@@ -1,0 +1,36 @@
+.morty_iconSearch{
+  color: white;
+  font-size: 20px;
+}
+
+.rick_search{
+ justify-content: center;
+  width: 100%;
+  display: flex;
+}
+
+.rick_search form {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid  #51be81;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.rick_search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px;
+  background: none;
+  color: #fff;
+}
+
+.rick_search input:focus {
+  border: none;
+  outline: none;
+}
+
