@@ -15,8 +15,8 @@ export class ServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getChar(): Observable<any>{
-    return this.http.get<any>(this.charUrl)
+  getChar(page: number): Observable<any>{
+    return this.http.get<any>(this.charUrl+`?page=` + page)
   }
 
   getEpisodes(currentPage:number):Observable<any>{

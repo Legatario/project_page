@@ -15,9 +15,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './characters.component.css'
 })
 export class CharactersComponent implements OnInit{
-  data: any;
-  mortyData: any;
+  data: any[] = []
+  mortyData: any[] = [];
   call: any;
+  page: number = 1;
+  filterRick: string = '';
 
 
   constructor(private service: ServiceService, private stateService: StateService, private elementRef: ElementRef) {}
@@ -38,21 +40,25 @@ export class CharactersComponent implements OnInit{
   }
 
   getChar(): void {
-    this.service.getChar().subscribe({
-      next: (data) =>{
-        console.log(data)
-        this.data = data.results
-        this.mortyData = data.results
+    this.service.getChar(this.page).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.data = [...this.data, ...data.results];
+        this.page++;
+        this.applyFilter(this.filterRick);
       }
-    })
+    });
   }
 
-  public JerrySearch($event: any):void{
+  public JerrySearch($event: any):void {
+    this.filterRick = $event;
+    this.applyFilter($event);
+  }
 
+  private applyFilter(filterValue: string): void {
     this.mortyData = this.data.filter((data: any) => {
-      return data.name.toLowerCase().includes($event);
+      return data.name.toLowerCase().includes(filterValue);
     });
-    console.log(this.mortyData)
   }
 
   @HostListener('scroll', ['$event'])
@@ -60,9 +66,10 @@ export class CharactersComponent implements OnInit{
   onScroll(event: any): void {
     const element = event.target
     if (
-      element.scrollHeight - element.scrollTop === element.clientHeight
+      element.scrollHeight - element.scrollTop <= element.clientHeight
     ) {
       console.log(element.scrollHeight)
+      this.getChar()
     }
   }
 
