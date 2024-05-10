@@ -11,6 +11,7 @@
   border-radius: 15px;
   overflow: scroll;
   gap: 10px;
+  overflow: auto;
 }
 
 

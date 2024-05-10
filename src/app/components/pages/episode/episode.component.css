@@ -12,3 +12,19 @@
 .rick-section::-webkit-scrollbar {
   display: none;
 }
+
+.alan_table {
+  margin: 1rem;
+
+}
+
+.alan_row{
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-top: 1rem;
+}
+
+.alan_row:hover {
+  color: #ccc;
+  transform: scale(1.05);
+}

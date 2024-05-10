@@ -2,7 +2,7 @@ import { SearchComponent } from './../../search/search.component';
 import { StateService } from './../../../services/state.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceService } from './../../../services/service.service';
-import { Component, OnInit} from '@angular/core';
+import { Component, ElementRef, OnInit, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
@@ -20,7 +20,7 @@ export class CharactersComponent implements OnInit{
   call: any;
 
 
-  constructor(private service: ServiceService, private stateService: StateService) {}
+  constructor(private service: ServiceService, private stateService: StateService, private elementRef: ElementRef) {}
 
   ngOnInit(): void {
     this.getChar();
@@ -30,8 +30,11 @@ export class CharactersComponent implements OnInit{
     });
 
     this.call = this.stateService.getBethSearch()
-    console.log(1)
     console.log(this.call)
+
+    const rickSectionElement = this.elementRef.nativeElement.querySelector('.rick-section');
+
+    rickSectionElement.addEventListener('scroll', this.onScroll.bind(this));
   }
 
   getChar(): void {
@@ -50,6 +53,17 @@ export class CharactersComponent implements OnInit{
       return data.name.toLowerCase().includes($event);
     });
     console.log(this.mortyData)
+  }
+
+  @HostListener('scroll', ['$event'])
+
+  onScroll(event: any): void {
+    const element = event.target
+    if (
+      element.scrollHeight - element.scrollTop === element.clientHeight
+    ) {
+      console.log(element.scrollHeight)
+    }
   }
 
 
