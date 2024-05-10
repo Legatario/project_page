@@ -27,7 +27,7 @@ export class SearchComponent {
     e.preventDefault();
 
     const target = e.target as HTMLInputElement;
-    const searchValue = target.value;
+    const searchValue = target.value.toLowerCase();
     this.saveSearch(searchValue);
 
     this.serchMorty.emit(searchValue)

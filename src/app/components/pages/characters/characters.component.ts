@@ -37,9 +37,9 @@ export class CharactersComponent implements OnInit{
   getChar(): void {
     this.service.getChar().subscribe({
       next: (data) =>{
+        console.log(data)
         this.data = data.results
         this.mortyData = data.results
-        console.log(this.data)
       }
     })
   }

@@ -9,7 +9,7 @@ export class ServiceService {
 
   private charUrl = "https://rickandmortyapi.com/api/character";
 
-  // private episodesUrl = "https://rickandmortyapi.com/api/episode";
+  private episodesUrl = "https://rickandmortyapi.com/api/episode";
 
 
 
@@ -17,6 +17,10 @@ export class ServiceService {
 
   getChar(): Observable<any>{
     return this.http.get<any>(this.charUrl)
+  }
+
+  getEpisodes(currentPage:number):Observable<any>{
+    return this.http.get<any>(this.episodesUrl+`?page=` + currentPage)
   }
 
 
