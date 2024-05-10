@@ -2,11 +2,12 @@ import { ServiceService } from './../../../services/service.service';
 import { Component } from '@angular/core';
 import { SearchComponent } from '../../search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-episode',
   standalone: true,
-  imports: [HttpClientModule ,SearchComponent],
+  imports: [HttpClientModule ,SearchComponent, RouterLink],
   providers:[ServiceService],
   templateUrl: './episode.component.html',
   styleUrl: './episode.component.css'

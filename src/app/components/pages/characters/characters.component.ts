@@ -4,12 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceService } from './../../../services/service.service';
 import { Component, ElementRef, OnInit, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [HttpClientModule, CommonModule, SearchComponent],
+  imports: [HttpClientModule, CommonModule, SearchComponent, RouterLink],
   providers:[ServiceService, StateService],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'
@@ -32,7 +33,6 @@ export class CharactersComponent implements OnInit{
     });
 
     this.call = this.stateService.getBethSearch()
-    console.log(this.call)
 
     const rickSectionElement = this.elementRef.nativeElement.querySelector('.rick-section');
 

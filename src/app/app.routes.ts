@@ -3,6 +3,8 @@ import { CharactersComponent } from './components/pages/characters/characters.co
 import { HomeComponent } from './components/pages/home/home.component';
 import { MainComponent } from './components/main/main.component';
 import { EpisodeComponent } from './components/pages/episode/episode.component';
+import { PersonaComponent } from './components/pages/persona/persona.component';
+import { PilotoComponent } from './components/pages/piloto/piloto.component';
 
 
 export const routes: Routes = [
@@ -39,8 +41,36 @@ export const routes: Routes = [
     component: MainComponent,
     children: [
       {
+        'path': 'character/:id',
+        component: PersonaComponent
+      },
+        {
+    'path': 'main',
+    component: MainComponent
+  },
+    ]
+  },
+  {
+    path: '',
+    component: MainComponent,
+    children: [
+      {
         'path': 'episodes',
         component: EpisodeComponent
+      },
+        {
+    'path': 'main',
+    component: MainComponent
+  },
+    ]
+  },
+  {
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        'path': 'episodes/:id',
+        component: PilotoComponent
       },
         {
     'path': 'main',

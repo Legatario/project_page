@@ -2,11 +2,11 @@
 <section class="rick-section">
   <!-- <img src="./assets/banner.jpeg" alt="Banner de Rick and Morty" class="rick-image"> -->
     @for(data of mortyData; track data.id){
-      <div class="morty_card">
-        <div>
-          <img src={{data.image}} alt="char" class="morty_img">
-          <h2>{{data.name}}</h2>
+        <div class="morty_card" routerLink="/character/{{ data.id }}">
+          <div>
+            <img src={{data.image}} alt="char" class="morty_img">
+            <h2>{{data.name}}</h2>
+          </div>
         </div>
-      </div>
     }
 </section>
