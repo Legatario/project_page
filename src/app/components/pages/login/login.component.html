@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="Poopybutthole-back">
+  <div class="container">
+    <div class="card">
+      <h1>LOGIN</h1>
+
+      <form class="Poopybutthole-form"[formGroup]="loginForm" (submit)="submitLogin()">
+        <div class="label-float">
+          <input type="text" name="email" paceholder="" required  formControlName="email"/>
+          <label id="userLabel" for="email">Usuario</label>
+            <div id="msgError" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched">campo obrigatorio </div>
+            <div id="msgError" *ngIf="loginForm.get('email')?.errors?.['email']">O formato do email é inválido.</div>
+        </div>
+
+        <div class="label-float">
+          <input type="password" name="password" paceholder="" required formControlName="password"/>
+          <label id="senhaLabel" for="password">Senha</label>
+          <div id="msgError" *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">campo obrigatorio </div>
+        </div>
+
+        <div class="justify-center">
+          <button type="submit" [disabled]="!loginForm.valid">Entrar</button>
+        </div>
+      </form>
+
+      <div class="justify-center">
+        <hr />
+      </div>
+
+      <p>
+        Não tem uma conta?
+        <a routerLink="/cadastro">
+          Cadastre-se
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+
