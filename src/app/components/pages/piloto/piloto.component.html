@@ -1,1 +1,25 @@
-<p>piloto works!</p>
+<section class="rick-section">
+  @if(piloto){
+    <div class="episode_card-Benjamin">
+      <div class="episode_header-Benjamin">
+        <h2>{{ piloto.name }}</h2>
+        <p class="episode_info-Benjamin">Lançamento: {{ piloto.air_date }}</p>
+      </div>
+      <div class="episode_body-Benjamin">
+        <p class="episode_info-Benjamin">Episódio: {{ piloto.episode }}</p>
+        <p class="episode_info-Benjamin">Criado: {{ piloto.created }}</p>
+      </div>
+    </div>
+  }
+  @if(charOfPilot){
+    <h2 class="title-Benjamin">Personagens no episódio</h2>
+    @for(char of charOfPilot; track char.id){
+      <div class="morty_card" routerLink="/character/{{ char.id }}">
+        <div>
+          <img src={{char.image}} alt="char" class="morty_img">
+          <h2>{{char.name}}</h2>
+        </div>
+      </div>
+    }
+  }
+</section>

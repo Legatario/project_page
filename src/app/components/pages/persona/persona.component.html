@@ -1,1 +1,49 @@
-<p>persona works!</p>
+<section class="rick-section">
+  @if(persona){
+    <div class="container">
+      <img src={{persona.image}} alt="char"class="character-image">
+      <div class="characteres-info">
+        <div>
+        </div>
+          <div class="character-info">
+              <label>Nome:</label>
+              <span class="value">{{ persona.name }}</span>
+          </div>
+          <div class="character-info">
+              <label>Status:</label>
+              <span class="value">{{ persona.status }}</span>
+          </div>
+          <div class="character-info">
+              <label>Espécie:</label>
+              <span class="value">{{ persona.species }}</span>
+          </div>
+          <div class="character-info">
+              <label>Gênero:</label>
+              <span class="value">{{ persona.gender }}</span>
+          </div>
+          <div class="character-info">
+              <label>Origem:</label>
+              <span class="value">{{ persona.origin.name }}</span>
+          </div>
+          <div class="character-info">
+              <label>Localização:</label>
+              <span class="value">{{ persona.location.name }}</span>
+          </div>
+          <div class="character-info">
+              <label>Criado:</label>
+              <span class="value">{{ persona.created }}</span>
+          </div>
+          <div class="character-info Alien">
+              <label>Episodios:</label>
+              <span class="value-Alien">
+                @for(epi of persona.episode; track persona.episode){
+                  <p>{{ epi }},<p>
+                }
+              </span>
+          </div>
+      </div>
+  </div>
+
+  }
+
+</section>

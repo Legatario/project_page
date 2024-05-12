@@ -1,3 +1,76 @@
-p{
-  color: white;
+.rick-section {
+  width: 100%;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  background: linear-gradient(to right, #51be81, #06b1c2);
+  border-radius: 15px;
+  overflow: scroll;
+  gap: 10px;
+  overflow: auto;
+}
+
+.episode_card-Benjamin {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  justify-self: center;
+}
+
+.title-Benjamin{
+  grid-column-start: 1;
+  grid-column-end: -1;
+  text-transform: uppercase;
+}
+
+.episode_header-Benjamin {
+  margin-bottom: 10px;
+}
+
+.episode_header-Benjamin h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.episode_info-Benjamin {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.episode_body-Benjamin {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.rick-section::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Estilos para os cards */
+.morty_card {
+  width: 90%; /* Ajusta a largura dos cards */
+  max-width: 300px; /* Define uma largura máxima */
+  height: auto;
+  max-height: 386px;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 15px;
+  margin: 15px; /* Reduz a margem para dispositivos menores */
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Estilos para o conteúdo dos cards */
+.morty_card div {
+  padding: 1rem;
+}
+
+/* Estilos para as imagens dentro dos cards */
+.morty_img {
+  width: 100%;
+  height: auto;
 }

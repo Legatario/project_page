@@ -11,11 +11,14 @@
 }
 
 img{
-  width: 400px;
-  height: 100px;
+  width: 50%;
+  max-width: 400px;
+  height: auto;
 }
 
 p {
-  padding: 0 10px;
-  color:#76e12f;
+  padding: 0;
+  margin: 10px;
+  color: #76e12f;
+  overflow-wrap: break-word;
 }

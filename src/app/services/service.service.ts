@@ -23,5 +23,16 @@ export class ServiceService {
     return this.http.get<any>(this.episodesUrl+`?page=` + currentPage)
   }
 
+  getPersona(id: Number):Observable<any>{
+    return this.http.get<any>(this.charUrl+`/`+id)
+  }
+
+  getPiloto(id: Number):Observable<any>{
+    return this.http.get<any>(this.episodesUrl+`/`+id)
+  }
+
+  getPilotoOfPersona(char: number): Observable<any>{
+    return this.http.get<any>(this.charUrl+`/` + char)
+  }
 
 }

@@ -16,7 +16,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './characters.component.css'
 })
 export class CharactersComponent implements OnInit{
-  data: any[] = []
+  data: any[] = [];
   mortyData: any[] = [];
   call: any;
   page: number = 1;
