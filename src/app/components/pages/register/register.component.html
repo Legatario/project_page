@@ -3,27 +3,29 @@
       <div class="card">
         <h1>CADASTRAR</h1>
 
-        <div id="msgError"></div>
-        <div id="msgSuccess"></div>
-        <form>
+        <form [formGroup]="registerForm">
           <div class="label-float">
-            <input type="text" id="nome" placeholder=" " required />
-            <label id="labelNome" for="nome">Nome</label>
+            <input type="text" id="name" placeholder=" " required  formControlName="name"/>
+            <label id="labelNome" for="name">Nome</label>
+            <div id="msgError" *ngIf="registerForm.get('name')?.errors?.['required'] && registerForm.get('name')?.touched">campo obrigatorio</div>
           </div>
 
           <div class="label-float">
-            <input type="text" id="usuario" placeholder=" " required />
-            <label id="labelUsuario" for="usuario">Usuário</label>
+            <input type="text" id="usuario" placeholder=" " required  formControlName="email"/>
+            <label id="labelUsuario" for="usuario">E-mail</label>
+            <div id="msgError" *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched">campo obrigatorio</div>
+            <div id="msgError" *ngIf="registerForm.get('email')?.errors?.['email'] && registerForm.get('email')?.touched">formato de e-mail é inválido</div>
           </div>
 
           <div class="label-float">
-            <input type="password" id="senha" placeholder=" " required />
+            <input type="password" id="senha" placeholder=" " required formControlName="password"/>
             <label id="labelSenha" for="senha">Senha</label>
+            <div id="msgError" *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched">campo obrigatorio</div>
           </div>
 
 
           <div class="justify-center">
-            <button onclick="cadastrar()">Cadastrar</button>
+            <button type="submit" [disabled]="!registerForm.valid">Cadastrar</button>
           </div>
         </form>
 
