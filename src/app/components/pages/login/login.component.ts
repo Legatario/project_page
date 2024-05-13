@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from 'express';
 import { LoginModel } from '../../../models/loginModel';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +14,10 @@ import { RouterLink } from '@angular/router';
 export class LoginComponent implements OnInit{
 
   loginForm!: FormGroup;
+  msgError: string = '';
 
-  constructor(private formBuilder : FormBuilder){}
-  // , route : Router
+  constructor(private formBuilder : FormBuilder, private router: Router){}
+
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -28,9 +28,22 @@ export class LoginComponent implements OnInit{
 
 
 
- submitLogin(){
-  debugger
-  var dados = this.loginForm.getRawValue() as LoginModel;
- }
+  submitLogin(){
+    const dados = this.loginForm.getRawValue() as LoginModel;
 
+
+    const listUser = JSON.parse(localStorage.getItem('listUser') || '[]');
+
+    // Verificar se existe um usuário com o email e senha fornecidos
+    const usuarioValido = listUser.find((usuario: any) => {
+      return usuario.emailCad == dados.email && usuario.passwordCad == dados.password;
+    });
+
+    if (usuarioValido) {
+      this.router.navigate(['/home']);
+    } else {
+      this.msgError = 'Por favor, verifique o email e a senha';
+    }
+
+  }
 }

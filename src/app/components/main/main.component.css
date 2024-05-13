@@ -14,3 +14,10 @@
   margin: 0 0.5rem;
 }
 
+
+
+@media (max-width: 768px) {
+  .rick_container{
+    margin: 0;
+  }
+}

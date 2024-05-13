@@ -46,28 +46,10 @@
   height: auto;
 }
 
-/* @media only screen and (max-width: 1200px) {
-  .rick-section {
-    grid-template-columns: repeat(4, 1fr);
+@media (max-width: 500px) {
+
+  .rick-section{
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
   }
 
 }
-
-
-@media only screen and (max-width: 1000px) {
-  .rick-section {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media only screen and (max-width: 790px) {
-  .rick-section {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .rick-section {
-    grid-template-columns: 1fr;
-  }
-} */

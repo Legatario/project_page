@@ -3,7 +3,14 @@
       <div class="card">
         <h1>CADASTRAR</h1>
 
-        <form [formGroup]="registerForm">
+        @if(msgError){
+          <div class="msgError-rick">{{ msgError }}</div>
+        }
+        @if(msgSuccess){
+          <div class="msgSuccess-rick">{{ msgSuccess }}</div>
+        }
+
+        <form [formGroup]="registerForm" (submit)=" submitRegister()">
           <div class="label-float">
             <input type="text" id="name" placeholder=" " required  formControlName="name"/>
             <label id="labelNome" for="name">Nome</label>

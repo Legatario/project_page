@@ -2,7 +2,9 @@
   <div class="container">
     <div class="card">
       <h1>LOGIN</h1>
-
+      @if(msgError){
+        <div class="msgError-rick">{{ msgError }}</div>
+      }
       <form class="Poopybutthole-form" [formGroup]="loginForm" (submit)="submitLogin()">
         <div class="label-float">
           <input type="text" name="email" paceholder="" required  formControlName="email"/>

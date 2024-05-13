@@ -1,11 +1,17 @@
 .rick-section{
   width: 100%;
-  height: 100%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(to right, #51be81, #06b1c2);
   border-radius: 15px;
+  overflow: scroll;
 }
+
+.rick-section::-webkit-scrollbar {
+  display: none;
+}
+
 .rick_image, img{
   width: 100%;
   height: auto;

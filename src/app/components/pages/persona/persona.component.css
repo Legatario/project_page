@@ -88,3 +88,11 @@ span{
       margin-top: 20px;
   }
 }
+
+@media (max-width: 500px) {
+
+  .rick-section{
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
+
+}

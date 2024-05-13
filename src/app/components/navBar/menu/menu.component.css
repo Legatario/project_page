@@ -2,7 +2,7 @@
   display: flex;
   display: inline;
   list-style-type: none;
-  margin-right: 1rem;
+  margin-right: 3%;
   min-height: 100%;
 
 }
@@ -26,3 +26,12 @@
   color: #76e12f;;
 }
 
+@media (max-width: 768px) {
+  .navbar-nav{
+    margin: 0;
+  }
+  ul{
+    padding: 0 0.5rem;
+
+  }
+}
