@@ -4,7 +4,7 @@
 <h1 align="center">Rick & Morty SPA</h1>
 <p align="center">
   <img src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge" />
-  <img src="http://img.shields.io/static/v1?label=realize%20data&message=July&color=green&style=for-the-badge" />
+  <img src="http://img.shields.io/static/v1?label=realize%20data&message=Jay&color=green&style=for-the-badge" />
 </p>
 <p align="center">
   <img src="https://img.shields.io/github/stars/legatario?style=social" />
