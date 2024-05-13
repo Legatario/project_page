@@ -89,7 +89,6 @@ export class CharactersComponent implements OnInit{
       this.service.getPilotoOfPersona('?name='+savedSearchTerm).subscribe({
         next: (data) => {
           this.mortyData = data.results
-          this.loading = false
         },
         error: (error) => {
           console.error('Resultado não encontrado', error);
@@ -98,6 +97,10 @@ export class CharactersComponent implements OnInit{
         }
       })
     }
+  }
+
+  isDuplicateId(id: number): boolean {
+    return this.mortyData.some(data => data.id === id);
   }
 
 }

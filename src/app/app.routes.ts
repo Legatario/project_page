@@ -8,6 +8,7 @@ import { PilotoComponent } from './components/pages/piloto/piloto.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { FaultComponent } from './components/pages/fault/fault.component';
+import { authGuard } from './guard/auth.guard';
 
 
 export const routes: Routes = [
@@ -17,17 +18,28 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'cadastro',
+    component: RegisterComponent
+  },
+  {
     path: '',
     component: MainComponent,
     children: [
       {
         'path': 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [authGuard],
       },
         {
     'path': 'main',
-    component: MainComponent
-  },
+    component: MainComponent,
+    canActivate: [authGuard],
+  }
+
     ]
   },
   {
@@ -36,11 +48,13 @@ export const routes: Routes = [
     children: [
       {
         'path': 'character',
-        component: CharactersComponent
+        component: CharactersComponent,
+        canActivate: [authGuard],
       },
         {
     'path': 'main',
-    component: MainComponent
+    component: MainComponent,
+    canActivate: [authGuard],
   },
     ]
   },
@@ -50,11 +64,13 @@ export const routes: Routes = [
     children: [
       {
         'path': 'character/:id',
-        component: PersonaComponent
+        component: PersonaComponent,
+        canActivate: [authGuard],
       },
         {
     'path': 'main',
-    component: MainComponent
+    component: MainComponent,
+    canActivate: [authGuard],
   },
     ]
   },
@@ -64,11 +80,13 @@ export const routes: Routes = [
     children: [
       {
         'path': 'episodes',
-        component: EpisodeComponent
+        component: EpisodeComponent,
+        canActivate: [authGuard],
       },
         {
     'path': 'main',
-    component: MainComponent
+    component: MainComponent,
+    canActivate: [authGuard],
   },
     ]
   },
@@ -78,11 +96,13 @@ export const routes: Routes = [
     children: [
       {
         'path': 'episodes/:id',
-        component: PilotoComponent
+        component: PilotoComponent,
+        canActivate: [authGuard],
       },
         {
     'path': 'main',
-    component: MainComponent
+    component: MainComponent,
+    canActivate: [authGuard],
   },
     ]
   },
@@ -92,21 +112,15 @@ export const routes: Routes = [
     children: [
       {
         'path': '**',
-        component: FaultComponent
+        component: FaultComponent,
+        canActivate: [authGuard],
       },
         {
     'path': 'main',
-    component: MainComponent
+    component: MainComponent,
+    canActivate: [authGuard],
   },
     ]
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'cadastro',
-    component: RegisterComponent
   },
 
 ];

@@ -3,7 +3,6 @@
   @if(mortyData.length == 0 && !loading){
     <app-fault></app-fault>
   }
-  @if(!loading){
     @for(data of mortyData; track data.id){
         <div class="morty_card" routerLink="/character/{{ data.id }}">
           <div>
@@ -12,7 +11,6 @@
           </div>
         </div>
     }
-  }
   @if(loading){
     <app-loading></app-loading>
   }
