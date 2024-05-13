@@ -53,7 +53,7 @@
 
 ``ng serve``
 
-✨ Autor <br>
-<img src="https://avatars.githubusercontent.com/u/103957268?v=4" width=115><br>
+## ✨ Autor <br>
+<br><img src="https://avatars.githubusercontent.com/u/103957268?v=4" width=115><br>
 <p>Luís Phillipe Nunes</p><br>
 <p>Data de finalização do projeto: 13/07/2022<p>
