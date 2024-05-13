@@ -9,46 +9,51 @@
 <p align="center">
   <img src="https://img.shields.io/github/stars/legatario?style=social" />
 </p>
-<p>Este é um projeto de uma Single-Page Application (SPA) utilizando Angular e a API Rick & Morty para consumo de dados. A aplicação possui um layout de dashboard com cabeçalho e menu lateral fixos, além de páginas de listagem de personagens e episódios, e uma página de detalhes acessada ao clicar em um dos itens da listagem.</p>
+<p>Este é um projeto de uma Single-Page Application (SPA) utilizando Angular e a API Rick & Morty para consumo de dados. A aplicação possui um layout de dashboard com cabeçalho e menu lateral fixos, além de páginas de listagem de personagens e episódios, e uma página de detalhes acessada ao clicar em um dos itens da listagem.</p> <br>
 
-🚀 Funcionalidades
-Listagem de personagens
-Listagem de episódios
-Detalhes de personagens e episódios
-Paginação nas listagens
-Barra de busca global para filtrar listagens
-Funcionalidade de scroll infinito
-Persistência do estado da busca após recarregar a página ou mudar de listagem
-Autenticação de usuário (Desafio 3 - Opcional)
+## 🚀 Funcionalidades
 
-🔧 Tecnologias Utilizadas
-Angular
-TypeScript
-HTML5
-CSS3
-JavaScript
-GitHub
+- Listagem de personagens <br>
+- Listagem de episódios <br>
+- Detalhes de personagens e episódios <br>
+- Paginação nas listagens <br>
+- Barra de busca global para filtrar listagens <br>
+- Funcionalidade de scroll infinito <br>
+- Persistência do estado da busca após recarregar a página ou mudar de listagem <br>
+- Autenticação de usuário (Desafio 3 - Opcional) <br>
 
-💻 Como Usar
-Clone o repositório:
-bash
-Copiar código
-git clone https://github.com/legatario/Rick-and-Morty-SPA.git
-Instale as dependências:
-bash
-Copiar código
-cd Rick-and-Morty-SPA
-npm install
-Execute o servidor de desenvolvimento:
-bash
-Copiar código
-ng serve --open
-📁 Acesso à API
-API: Rick & Morty API
+## 🔧 Tecnologias Utilizadas
 
-📝 Licença
-Este projeto está sob a Licença MIT.
+- Angular <br>
+- TypeScript <br>
+- HTML5 <br>
+- CSS3 <br>
+- JavaScript <br>
+- GitHub <br>
 
-✨ Autor
-<img src="https://avatars.githubusercontent.com/u/103957268?v=4" width=115><br><sub>Luís Phillipe Nunes</sub>
-Data de finalização do projeto: 13/07/2022
+##  Aviso
+
+- o cadastro é feito no localStorage, usado apenas para demontração, portanto os dados ficam salvo apenas no seu computador
+
+## 💻 Como Usar
+
+1. **Clone o repositório:**
+
+```bash git clone https://github.com/Legatario/project_page.git ```
+
+2. **Instale as dependências:**
+
+``npm install``
+
+3. **Entre na página do projeto**
+
+``cd project_page``
+
+4. **Execute o servidor de desenvolvimento:**
+
+``ng serve``
+
+✨ Autor <br>
+<img src="https://avatars.githubusercontent.com/u/103957268?v=4" width=115><br>
+<p>Luís Phillipe Nunes</p><br>
+<p>Data de finalização do projeto: 13/07/2022<p>
