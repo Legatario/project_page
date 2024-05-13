@@ -22,6 +22,7 @@ export class CharactersComponent implements OnInit{
   call: any;
   page: number = 1;
   filterRick: string = '';
+  loading: boolean = false
 
 
   constructor(private service: ServiceService, private stateService: StateService, private elementRef: ElementRef) {}
@@ -47,6 +48,7 @@ export class CharactersComponent implements OnInit{
         this.data = [...this.data, ...data.results];
         this.page++;
         this.applyFilter(this.filterRick);
+        this.loading = false
       }
     });
   }
@@ -70,6 +72,7 @@ export class CharactersComponent implements OnInit{
       element.scrollHeight - element.scrollTop <= element.clientHeight
     ) {
       console.log(element.scrollHeight)
+      this.loading = true
       this.getChar()
     }
   }

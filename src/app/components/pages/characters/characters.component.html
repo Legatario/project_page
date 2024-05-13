@@ -1,6 +1,5 @@
 <app-search (serchMorty)="JerrySearch($event)" class="Summer_box"></app-search>
 <section class="rick-section">
-  <!-- <img src="./assets/banner.jpeg" alt="Banner de Rick and Morty" class="rick-image"> -->
     @for(data of mortyData; track data.id){
         <div class="morty_card" routerLink="/character/{{ data.id }}">
           <div>
@@ -8,5 +7,8 @@
             <h2>{{data.name}}</h2>
           </div>
         </div>
+    }
+    @if(!loading){
+      <app-loading></app-loading>
     }
 </section>
