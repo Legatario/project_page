@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginModel } from '../../../models/loginModel';
 import { Router, RouterLink } from '@angular/router';
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -40,6 +39,15 @@ export class LoginComponent implements OnInit{
     });
 
     if (usuarioValido) {
+      const userLogado = {
+        nome: usuarioValido.nomeCad,
+        token: 'ajsausalzhdkla158'
+    };
+
+    const jsonString = JSON.stringify(userLogado);
+
+    localStorage.setItem('UserLogado', jsonString);
+
       this.router.navigate(['/home']);
     } else {
       this.msgError = 'Por favor, verifique o email e a senha';

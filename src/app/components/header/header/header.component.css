@@ -21,4 +21,5 @@ p {
   margin: 10px;
   color: #76e12f;
   overflow-wrap: break-word;
+  text-transform: capitalize;
 }

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ServiceService } from '../../../services/service.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from '../../loading/loading/loading.component';
 
 @Component({
   selector: 'app-persona',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule, LoadingComponent],
   providers: [ServiceService],
   templateUrl: './persona.component.html',
   styleUrl: './persona.component.css'

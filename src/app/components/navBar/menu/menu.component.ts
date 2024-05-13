@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 
 @Component({
@@ -10,5 +10,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
+
+  constructor(private router: Router){}
+
+  // Limpar o token e o nome do usuário do localStorage
+  logout() {
+    localStorage.removeItem('UserLogado');
+
+    this.router.navigate(['/login']);
+  }
 
 }

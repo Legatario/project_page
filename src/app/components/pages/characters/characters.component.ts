@@ -5,12 +5,13 @@ import { ServiceService } from './../../../services/service.service';
 import { Component, ElementRef, OnInit, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { LoadingComponent } from '../../loading/loading/loading.component';
 
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [HttpClientModule, CommonModule, SearchComponent, RouterLink],
+  imports: [HttpClientModule, CommonModule, SearchComponent, RouterLink, LoadingComponent],
   providers:[ServiceService, StateService],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'

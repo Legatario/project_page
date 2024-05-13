@@ -1,4 +1,4 @@
-import { Component, inject, Output, EventEmitter   } from '@angular/core';
+import { Component, inject, Output, EventEmitter, OnInit   } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { StateService } from '../../services/state.service';
 
@@ -11,32 +11,36 @@ import { StateService } from '../../services/state.service';
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
 
-  private State = inject(StateService)
+
 
   searchTerm: string = '';
   @Output() serchMorty = new EventEmitter<any>();
+
+  constructor(private State: StateService) {}
+
+  ngOnInit(): void {
+    const savedSearchTerm = localStorage.getItem('searchTerm');
+    if (savedSearchTerm) {
+      this.searchTerm = savedSearchTerm;
+    }
+  }
 
   onSubmit(event: Event) {
     event.preventDefault();
   }
 
-  public search(e:any):void{
+  public search(event: any): void {
+    event.preventDefault();
 
-    e.preventDefault();
-
-    const target = e.target as HTMLInputElement;
+    const target = event.target as HTMLInputElement;
     const searchValue = target.value.toLowerCase();
-    this.saveSearch(searchValue);
+    this.searchTerm = searchValue;
 
-    this.serchMorty.emit(searchValue)
+    localStorage.setItem('searchTerm', searchValue);
 
+    this.serchMorty.emit(searchValue);
   }
-
-  saveSearch(searchValue: any){
-    this.State.changeBethSearch(searchValue);
-  }
-
 
 }

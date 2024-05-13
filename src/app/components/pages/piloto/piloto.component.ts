@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ServiceService } from '../../../services/service.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from '../../loading/loading/loading.component';
 
 @Component({
   selector: 'app-piloto',
   standalone: true,
-  imports: [HttpClientModule, RouterLink],
+  imports: [HttpClientModule, RouterLink, LoadingComponent],
   providers: [ServiceService],
   templateUrl: './piloto.component.html',
   styleUrl: './piloto.component.css'

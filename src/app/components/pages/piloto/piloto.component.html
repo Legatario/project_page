@@ -10,6 +10,8 @@
         <p class="episode_info-Benjamin">Criado: {{ piloto.created }}</p>
       </div>
     </div>
+  }@else{
+    <app-loading></app-loading>
   }
   @if(charOfPilot){
     <h2 class="title-Benjamin">Personagens no episódio</h2>
@@ -21,5 +23,7 @@
         </div>
       </div>
     }
+  }@else{
+    <app-loading></app-loading>
   }
 </section>

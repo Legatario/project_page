@@ -1,0 +1,24 @@
+.morty_icon{
+  color: white;
+  font-size: 60px;
+  animation: spin 1s linear infinite;
+  min-height: 60px;
+  min-width: 60px;
+}
+
+.loading{
+  width: 100%;
+  display: flex;
+  height: auto;
+  justify-content: center;
+}
+
+@keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }
+
+  to{
+    transform:  rotate(360deg);
+  }
+}
