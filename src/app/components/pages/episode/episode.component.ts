@@ -1,26 +1,30 @@
 import { ServiceService } from './../../../services/service.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchComponent } from '../../search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { LoadingComponent } from '../../loading/loading/loading.component';
+import { FaultComponent } from '../fault/fault.component';
 
 @Component({
   selector: 'app-episode',
   standalone: true,
-  imports: [HttpClientModule ,SearchComponent, RouterLink, LoadingComponent],
+  imports: [HttpClientModule ,SearchComponent, RouterLink, LoadingComponent, FaultComponent],
   providers:[ServiceService],
   templateUrl: './episode.component.html',
   styleUrl: './episode.component.css'
 })
-export class EpisodeComponent {
+export class EpisodeComponent implements OnInit{
 
   currentPage: number = 1;
   epiDate: any[] = [];
   SummerEpi: any;
   loading: boolean = true;
+  searchTerm: string = '';
 
-  constructor(private service: ServiceService){
+  constructor(private service: ServiceService){}
+
+  ngOnInit(): void {
     this.getEpisodes();
   }
 
@@ -30,9 +34,7 @@ export class EpisodeComponent {
     });
   }
 
-  // this.mortyData = this.data.filter((data: any) => {
-  //   return data.name.toLowerCase().includes($event);
-  // });
+
 
   getEpisodes(): void {
 
@@ -46,6 +48,7 @@ export class EpisodeComponent {
           this.getEpisodes();
         } else {
           this.SummerEpi = this.epiDate;
+          this.localSearch();
           this.loading = false
         }
       },
@@ -53,5 +56,16 @@ export class EpisodeComponent {
         console.error('Erro ao obter episódios:', error);
       }
     });
+  }
+
+  localSearch():void{
+
+    const savedSearchTerm = String(localStorage.getItem('searchTerm'));
+
+    if(savedSearchTerm !== ''){
+      this.SummerEpi = this.epiDate.filter((data : any) =>{
+        return data.name.toLowerCase().includes(savedSearchTerm) || data.episode.toLowerCase().includes(savedSearchTerm);
+      });
+    }
   }
 }

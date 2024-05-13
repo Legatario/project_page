@@ -6,12 +6,14 @@ import { Component, ElementRef, OnInit, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LoadingComponent } from '../../loading/loading/loading.component';
+import { FaultComponent } from '../fault/fault.component';
+
 
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [HttpClientModule, CommonModule, SearchComponent, RouterLink, LoadingComponent],
+  imports: [HttpClientModule, CommonModule, SearchComponent, RouterLink, LoadingComponent, FaultComponent],
   providers:[ServiceService, StateService],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'
@@ -45,11 +47,10 @@ export class CharactersComponent implements OnInit{
   getChar(): void {
     this.service.getChar(this.page).subscribe({
       next: (data) => {
-        console.log(data);
         this.data = [...this.data, ...data.results];
         this.page++;
         this.applyFilter(this.filterRick);
-        this.loading = false
+        this.loading = false;
       }
     });
   }
@@ -73,7 +74,6 @@ export class CharactersComponent implements OnInit{
     if (
       element.scrollHeight - element.scrollTop <= element.clientHeight
     ) {
-      console.log(element.scrollHeight)
       if(!savedSearchTerm){
         this.loading = true
         this.getChar()
@@ -85,9 +85,16 @@ export class CharactersComponent implements OnInit{
 
     const savedSearchTerm = String(localStorage.getItem('searchTerm'));
     if(savedSearchTerm !== ''){
+      this.loading = true
       this.service.getPilotoOfPersona('?name='+savedSearchTerm).subscribe({
         next: (data) => {
           this.mortyData = data.results
+          this.loading = false
+        },
+        error: (error) => {
+          console.error('Resultado não encontrado', error);
+          this.mortyData = []
+          this.loading = false;
         }
       })
     }

@@ -3,17 +3,19 @@ import { ServiceService } from '../../../services/service.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from '../../loading/loading/loading.component';
+import { FaultComponent } from '../fault/fault.component';
 
 @Component({
   selector: 'app-persona',
   standalone: true,
-  imports: [HttpClientModule, LoadingComponent],
+  imports: [HttpClientModule, LoadingComponent, FaultComponent],
   providers: [ServiceService],
   templateUrl: './persona.component.html',
   styleUrl: './persona.component.css'
 })
 export class PersonaComponent {
   persona?: any;
+  loading: boolean = false
 
   constructor(private route: ActivatedRoute, private service: ServiceService){
     this.getPersona();
@@ -22,9 +24,14 @@ export class PersonaComponent {
 
   getPersona(){
     const id = Number (this.route.snapshot.paramMap.get("id"));
+    this.loading = true;
     this.service.getPersona(id).subscribe({
       next: (data) => {
         this.persona = this.extractEpisodeNumbers(data);
+        this.loading = false;
+      },
+      error: (error) => {
+        this.loading = false;
       }
     })
   }

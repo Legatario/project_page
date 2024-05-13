@@ -29,6 +29,11 @@
   transform: scale(1.05);
 }
 
+.rick-notFault{
+  display: flex;
+  min-height: 100%;
+}
+
 
 @media screen and (max-width: 768px) {
 

@@ -1,0 +1,23 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.error-container p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: white;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+
+.error-container img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 20%;
+}

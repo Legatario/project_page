@@ -7,6 +7,7 @@ import { PersonaComponent } from './components/pages/persona/persona.component';
 import { PilotoComponent } from './components/pages/piloto/piloto.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
+import { FaultComponent } from './components/pages/fault/fault.component';
 
 
 export const routes: Routes = [
@@ -78,6 +79,20 @@ export const routes: Routes = [
       {
         'path': 'episodes/:id',
         component: PilotoComponent
+      },
+        {
+    'path': 'main',
+    component: MainComponent
+  },
+    ]
+  },
+  {
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        'path': '**',
+        component: FaultComponent
       },
         {
     'path': 'main',

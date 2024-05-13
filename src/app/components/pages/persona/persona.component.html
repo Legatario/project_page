@@ -1,5 +1,8 @@
 <section class="rick-section">
-  @if(persona){
+  @if(loading){
+    <app-loading></app-loading>
+  }
+  @if(persona && !loading){
     <div class="container">
       <img src={{persona.image}} alt="char"class="character-image">
       <div class="characteres-info">
@@ -44,8 +47,9 @@
       </div>
   </div>
 
-  }@else{
-    <app-loading></app-loading>
+  }
+  @if(!loading && !persona){
+    <app-fault></app-fault>
   }
 
 </section>
