@@ -23,6 +23,7 @@
 .title-Benjamin{
   grid-column-start: 1;
   grid-column-end: -1;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -73,4 +74,12 @@
 .morty_img {
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 500px) {
+
+
+  .rick-section{
+    grid-template-columns: repeat(minmax(125px, 1fr));
+  }
 }

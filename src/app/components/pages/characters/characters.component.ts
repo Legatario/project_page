@@ -22,14 +22,15 @@ export class CharactersComponent implements OnInit{
   call: any;
   page: number = 1;
   filterRick: string = '';
-  loading: boolean = false
+  loading: boolean = false;
+  searchTerm: string = '';
 
 
   constructor(private service: ServiceService, private stateService: StateService, private elementRef: ElementRef) {}
 
   ngOnInit(): void {
     this.getChar();
-
+    this.localSearch();
     this.stateService.currentBethSearch$.subscribe(() => {
 
     });
@@ -68,15 +69,29 @@ export class CharactersComponent implements OnInit{
 
   onScroll(event: any): void {
     const element = event.target
+    const savedSearchTerm = String(localStorage.getItem('searchTerm'));
     if (
       element.scrollHeight - element.scrollTop <= element.clientHeight
     ) {
       console.log(element.scrollHeight)
-      this.loading = true
-      this.getChar()
+      if(!savedSearchTerm){
+        this.loading = true
+        this.getChar()
+      }
     }
   }
 
+  localSearch():void{
+
+    const savedSearchTerm = String(localStorage.getItem('searchTerm'));
+    if(savedSearchTerm !== ''){
+      this.service.getPilotoOfPersona('?name='+savedSearchTerm).subscribe({
+        next: (data) => {
+          this.mortyData = data.results
+        }
+      })
+    }
+  }
 
 }
 

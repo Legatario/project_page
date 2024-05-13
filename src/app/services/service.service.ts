@@ -31,7 +31,7 @@ export class ServiceService {
     return this.http.get<any>(this.episodesUrl+`/`+id)
   }
 
-  getPilotoOfPersona(char: number): Observable<any>{
+  getPilotoOfPersona(char: any): Observable<any>{
     return this.http.get<any>(this.charUrl+`/` + char)
   }
 
